@@ -5,12 +5,8 @@ using UnityEngine;
 public class SpaceShip : MonoBehaviour
 {
 	[SerializeField] private Transform muzzle = null;
-
-    // Start is called before the first frame update
-	private void Start()
-    {
-        
-    }
+	[SerializeField] private float fireRate = 3f;
+	private float lastFired;
 
     // Update is called once per frame
     private void Update()
@@ -20,14 +16,19 @@ public class SpaceShip : MonoBehaviour
 
 	private void ShootRegularBullet()
 	{
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKey(KeyCode.Space))
 		{
-			GameObject _bullet = ObjectPooler.SharedInstance.GetPooledObject();
-			if (_bullet != null)
+			if(Time.time - lastFired > 1 / fireRate)
 			{
-				_bullet.transform.position = muzzle.position;
-				_bullet.transform.rotation = transform.rotation;
-				_bullet.SetActive(true);
+				lastFired = Time.time;
+
+				GameObject _bullet = ObjectPooler.SharedInstance.GetPooledObject("Player Bullet");
+				if (_bullet != null)
+				{
+					_bullet.transform.position = muzzle.position;
+					_bullet.transform.rotation = transform.rotation;
+					_bullet.SetActive(true);
+				}
 			}
 		}
 	}

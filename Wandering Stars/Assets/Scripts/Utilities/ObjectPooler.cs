@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class ObjectPoolItem
+{
+	public int amountToPool = 0;
+	public GameObject objectToPool = null;
+	public bool isPoolExpanding = true;
+}
+
 public class ObjectPooler : MonoBehaviour
 {
-	public GameObject objectToPool = null;
-	[SerializeField] private List<GameObject> pooledObjects = new List<GameObject>();
-	[SerializeField] private int amountToPool = 0;
-	[SerializeField] private bool isPoolExpanding = true;
+	public List<ObjectPoolItem> itemsToPool;
+	public List<GameObject> pooledObjects;
 
 	#region Singleton
 	public static ObjectPooler SharedInstance;
@@ -20,33 +26,40 @@ public class ObjectPooler : MonoBehaviour
 
 	private void Start()
 	{
-		for (int i = 0; i < amountToPool; i++)
+		pooledObjects = new List<GameObject>();
+		foreach (ObjectPoolItem item in itemsToPool)
 		{
-			GameObject _object = (GameObject)Instantiate(objectToPool);
-			_object.SetActive(false);
-			pooledObjects.Add(_object);
+			for (int i = 0; i < item.amountToPool; i++)
+			{
+				GameObject obj = (GameObject)Instantiate(item.objectToPool);
+				obj.SetActive(false);
+				pooledObjects.Add(obj);
+			}
 		}
 	}
 
-	public GameObject GetPooledObject()
+	public GameObject GetPooledObject(string tag)
 	{
 		for (int i = 0; i < pooledObjects.Count; i++)
 		{
-			if(!pooledObjects[i].activeInHierarchy)
+			if (!pooledObjects[i].activeInHierarchy && pooledObjects[i].tag == tag)
 			{
 				return pooledObjects[i];
 			}
 		}
-		if (isPoolExpanding)
+		foreach (ObjectPoolItem item in itemsToPool)
 		{
-			GameObject _object = (GameObject)Instantiate(objectToPool);
-			_object.SetActive(false);
-			pooledObjects.Add(_object);
-			return _object;
+			if (item.objectToPool.tag == tag)
+			{
+				if (item.isPoolExpanding)
+				{
+					GameObject obj = (GameObject)Instantiate(item.objectToPool);
+					obj.SetActive(false);
+					pooledObjects.Add(obj);
+					return obj;
+				}
+			}
 		}
-		else
-		{
-			return null;
-		}
+		return null;
 	}
 }

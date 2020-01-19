@@ -12,7 +12,6 @@ public class Asteroids : MonoBehaviour
 	[SerializeField] private float minTurningSpeed = 40f;
 	[SerializeField] private float maxTurningSpeed = 200f;
 
-
 	private void Start()
 	{
 		FloatingAround();
@@ -25,14 +24,14 @@ public class Asteroids : MonoBehaviour
 
 	public virtual void RotateAround()
 	{
-		Vector3 _turningSpeed = new Vector3(0, 0, Random.Range(minTurningSpeed, maxTurningSpeed));
+		Vector3 _turningSpeed = new Vector3(0, 0, UnityEngine.Random.Range(minTurningSpeed, maxTurningSpeed));
 		transform.Rotate(_turningSpeed * Time.deltaTime);
 	}
 
 	public virtual void FloatingAround()
 	{
 		Rigidbody2D _rigid = GetComponent<Rigidbody2D>();
-		Vector2 randomPosition = new Vector2((float)Random.Range(-30f, 30f), (float)Random.Range(-30f, 30f));
+		Vector2 randomPosition = new Vector2((float)UnityEngine.Random.Range(-30f, 30f), (float)UnityEngine.Random.Range(-30f, 30f));
 		_rigid.AddForce(randomPosition * Time.deltaTime, ForceMode2D.Impulse);
 	}
 
