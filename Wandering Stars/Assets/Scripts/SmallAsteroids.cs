@@ -20,7 +20,7 @@ public class SmallAsteroids : Asteroids
 		if (other.gameObject.tag == Tags.Player_Bullet)
 		{
 			other.gameObject.SetActive(false);
-			Destroy(gameObject);
+			gameObject.SetActive(false);
 		}
 	}
 }

@@ -64,8 +64,11 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Asteroid.cs" />
     <Compile Include="Assets\Scripts\Asteroids.cs" />
+    <Compile Include="Assets\Scripts\AsteroidWaveSystem.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\EuclideanTorus.cs" />
+    <Compile Include="Assets\Scripts\GameUIManager.cs" />
+    <Compile Include="Assets\Scripts\SceneIndexes.cs" />
     <Compile Include="Assets\Scripts\SchipMovement.cs" />
     <Compile Include="Assets\Scripts\SmallAsteroids.cs" />
     <Compile Include="Assets\Scripts\SpaceShip.cs" />

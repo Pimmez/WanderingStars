@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class SpaceShip : MonoBehaviour
 {
+	[SerializeField] private int maxLives = 3;
+	private int lives = 0;
 	[SerializeField] private Transform muzzle = null;
 	[SerializeField] private float fireRate = 3f;
 	private float lastFired;
 
-    // Update is called once per frame
-    private void Update()
+	private void Start()
+	{
+		lives = maxLives;
+	}
+
+	// Update is called once per frame
+	private void Update()
     {
 		ShootRegularBullet();
+		Shield();
     }
+
+	private void Shield()
+	{
+		if(Input.GetKeyDown(KeyCode.E))
+		{
+			//SHIELD
+		}
+	}
 
 	private void ShootRegularBullet()
 	{

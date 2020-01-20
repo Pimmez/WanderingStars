@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3341874989879638896}
   - component: {fileID: 3341874989879638899}
   - component: {fileID: 3341874989879638898}
+  - component: {fileID: 1094261303}
+  - component: {fileID: 6751767808952903856}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -49,6 +51,10 @@ MonoBehaviour:
     objectToPool: {fileID: 2697664755169684113, guid: 8e15527b5a4520249811492efca7e536,
       type: 3}
     isPoolExpanding: 1
+  - amountToPool: 5
+    objectToPool: {fileID: 557163364539145292, guid: 095af55fd1463c8478f78d6b60165364,
+      type: 3}
+    isPoolExpanding: 1
   pooledObjects: []
 --- !u!95 &3341874989879638898
 Animator:
@@ -69,3 +75,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1094261303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3341874989879638897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62026168cb558a645bbe213bddf3bdae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitTimeForInitialization: 1
+  waitTimeForNextWave: 10
+  increaseEachWave: 3
+--- !u!114 &6751767808952903856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3341874989879638897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1017067b22dbe64418e5d3dc50c9228d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textWaves: {fileID: 0}
+  textLives: {fileID: 0}
+  textWaveTimer: {fileID: 0}
+  textScore: {fileID: 0}

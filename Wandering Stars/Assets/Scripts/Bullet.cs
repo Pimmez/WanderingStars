@@ -7,13 +7,13 @@ public class Bullet : MonoBehaviour
 	private Rigidbody2D rigid;
 	[SerializeField] private float bulletForce = 5f;
 
-    private void Awake()
-    {
+	private void Awake()
+	{
 		rigid = GetComponent<Rigidbody2D>();
 	}
 
 	private void FixedUpdate()
 	{
-		rigid.AddForce(transform.up * bulletForce * Time.deltaTime, ForceMode2D.Impulse);
+		rigid.velocity = transform.up * 1000 * Time.deltaTime;
 	}
 }

@@ -14,6 +14,7 @@ public class Asteroid : Asteroids
 
 	public override void FloatingAround()
 	{
+		base.FloatingAround();
 	}
 
 	public override void OnCollisionEnter2D(Collision2D other)
@@ -28,7 +29,7 @@ public class Asteroid : Asteroids
 
 			GameObject _object2 = (GameObject)Instantiate(smallAsteroid);
 			_object2.transform.position = transform.position;
-			Destroy(gameObject);
+			gameObject.SetActive(false);
 		}
 	}
 }
