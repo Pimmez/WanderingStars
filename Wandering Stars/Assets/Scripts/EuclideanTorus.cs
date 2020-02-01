@@ -15,7 +15,7 @@ public class EuclideanTorus : MonoBehaviour
 		if (transform.position.x > maxX)
 		{
 			transform.position = new Vector3(minX, transform.position.y, 0);
-			if (gameObject.tag == "Player Bullet")
+			if (gameObject.tag == Tags.RegularBullet)
 				{
 					gameObject.SetActive(false);
 				}
@@ -23,7 +23,7 @@ public class EuclideanTorus : MonoBehaviour
 		else if (transform.position.x < minX)
 		{
 			transform.position = new Vector3(maxX, transform.position.y, 0);
-			if (gameObject.tag == "Player Bullet")
+			if (gameObject.tag == Tags.RegularBullet)
 			{
 				gameObject.SetActive(false);
 			}
@@ -32,7 +32,7 @@ public class EuclideanTorus : MonoBehaviour
 		else if (transform.position.y > maxY)
 		{
 			transform.position = new Vector3(transform.position.x, minY, 0);
-			if (gameObject.tag == "Player Bullet")
+			if (gameObject.tag == Tags.RegularBullet)
 			{
 				gameObject.SetActive(false);
 			}
@@ -41,7 +41,7 @@ public class EuclideanTorus : MonoBehaviour
 		else if (transform.position.y < minY)
 		{
 			transform.position = new Vector3(transform.position.x, maxY, 0);
-			if (gameObject.tag == "Player Bullet")
+			if (gameObject.tag == Tags.RegularBullet)
 			{
 				gameObject.SetActive(false);
 			}

@@ -10,6 +10,16 @@ public class SpaceShip : MonoBehaviour
 	[SerializeField] private float fireRate = 3f;
 	private float lastFired;
 
+	private Animator anim;
+
+	private bool isRegularActive = true;
+	//private bool isMissileActive = false;
+
+	private void Awake()
+	{
+		anim = GetComponent<Animator>();
+	}
+
 	private void Start()
 	{
 		lives = maxLives;
@@ -18,17 +28,23 @@ public class SpaceShip : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
     {
-		ShootRegularBullet();
-		Shield();
-    }
-
-	private void Shield()
-	{
-		if(Input.GetKeyDown(KeyCode.E))
+		if(lives <= 0)
 		{
-			//SHIELD
+			Destroy(gameObject);
 		}
-	}
+
+		if(isRegularActive)
+		{
+			ShootRegularBullet();
+		}
+
+		/*
+		if(isMissileActive)
+		{
+			ShootHomingMissiles();
+		}
+		*/
+    }
 
 	private void ShootRegularBullet()
 	{
@@ -38,7 +54,7 @@ public class SpaceShip : MonoBehaviour
 			{
 				lastFired = Time.time;
 
-				GameObject _bullet = ObjectPooler.SharedInstance.GetPooledObject("Player Bullet");
+				GameObject _bullet = ObjectPooler.SharedInstance.GetPooledObject(Tags.RegularBullet);
 				if (_bullet != null)
 				{
 					_bullet.transform.position = muzzle.position;
@@ -48,4 +64,45 @@ public class SpaceShip : MonoBehaviour
 			}
 		}
 	}
+
+	private void RespawingShip()
+	{
+
+		anim.SetBool("isRespawning", true);
+		//AnimatorPlayer.instance.SetAnimationBool(anim, "isRespawning", true);
+	}
+
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if(collision.gameObject.tag == Tags.Asteroid)
+		{
+			lives--;
+			RespawingShip();
+		}
+		else
+		{
+			AnimatorPlayer.instance.SetAnimationBool(anim, "isRespawning", false);
+		}
+	}
+
+	/*
+	private void ShootHomingMissiles()
+	{
+		if (Input.GetKey(KeyCode.Space))
+		{
+			if (Time.time - lastFired > 1 / fireRate)
+			{
+				lastFired = Time.time;
+
+				GameObject _missile = ObjectPooler.SharedInstance.GetPooledObject(Tags.HomingMissile);
+				if (_missile != null)
+				{
+					_missile.transform.position = muzzle.position;
+					_missile.transform.rotation = transform.rotation;
+					_missile.SetActive(true);
+				}
+			}
+		}
+	}
+	*/
 }

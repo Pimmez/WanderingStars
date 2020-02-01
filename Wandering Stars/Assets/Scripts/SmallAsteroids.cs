@@ -17,9 +17,8 @@ public class SmallAsteroids : Asteroids
 	public override void OnCollisionEnter2D(Collision2D other)
 	{
 		base.OnCollisionEnter2D(other);
-		if (other.gameObject.tag == Tags.Player_Bullet)
+		if (other.gameObject.tag == Tags.RegularBullet)
 		{
-			other.gameObject.SetActive(false);
 			gameObject.SetActive(false);
 		}
 	}

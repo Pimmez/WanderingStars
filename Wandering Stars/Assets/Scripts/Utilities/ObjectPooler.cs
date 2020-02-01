@@ -18,7 +18,7 @@ public class ObjectPooler : MonoBehaviour
 	#region Singleton
 	public static ObjectPooler SharedInstance;
 
-	void Awake()
+	private void Awake()
 	{
 		SharedInstance = this;
 	}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 	private Rigidbody2D rigid;
-	[SerializeField] private float bulletForce = 5f;
+	[SerializeField] private float bulletForce = 10f;
 
 	private void Awake()
 	{
@@ -14,6 +14,12 @@ public class Bullet : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		rigid.velocity = transform.up * 1000 * Time.deltaTime;
+		rigid.AddForce(transform.up * bulletForce, ForceMode2D.Impulse);
+	}
+
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		gameObject.SetActive(false);
+		//instantiate hit effect
 	}
 }

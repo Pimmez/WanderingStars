@@ -6,7 +6,6 @@ using UnityEngine;
 //Overriden means that the class will use the same method but not the same code.
 //Sealed means it can't be inheranted by other classes.
 
-
 public class Asteroids : MonoBehaviour
 {
 	[SerializeField] private float minTurningSpeed = 40f;
@@ -37,9 +36,6 @@ public class Asteroids : MonoBehaviour
 
 	public virtual void OnCollisionEnter2D(Collision2D other)
 	{
-		if (other.gameObject.tag == Tags.Player)
-		{
-			Destroy(other.gameObject);
-		}
+		//
 	}
 }

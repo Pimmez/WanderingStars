@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Player Bullet
   - Asteroid
   - Explosion
+  - RegularBullet
+  - HomingMissile
   layers:
   - Default
   - TransparentFX

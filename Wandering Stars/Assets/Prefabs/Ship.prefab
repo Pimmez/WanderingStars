@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 4386563040191299577}
   - component: {fileID: 868648620}
   - component: {fileID: 1919810518}
+  - component: {fileID: 1659855959}
   m_Layer: 10
   m_Name: Ship
   m_TagString: Player
@@ -132,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLives: 3
   muzzle: {fileID: 1436299070}
-  fireRate: 8
+  fireRate: 2
 --- !u!70 &1919810518
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -149,6 +150,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.6, y: 1.3}
   m_Direction: 0
+--- !u!95 &1659855959
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4386563040191299554}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 550ca624648d5d54ca3082b7da03fa48, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4386563041220627638
 GameObject:
   m_ObjectHideFlags: 0

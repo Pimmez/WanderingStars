@@ -5229,7 +5229,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 20
+  far clip plane: 1000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -5436,7 +5436,7 @@ MonoBehaviour:
     FieldOfView: 60
     OrthographicSize: 5
     NearClipPlane: 0.3
-    FarClipPlane: 20
+    FarClipPlane: 1000
     Dutch: 0
     LensShift: {x: 0, y: 0}
     Iso: 200
@@ -6686,6 +6686,27 @@ PrefabInstance:
       propertyPath: textScore
       value: 
       objectReference: {fileID: 1709413910}
+    - target: {fileID: 3341874989879638899, guid: dd2d81605f1aaa64db018ff0f7a12363,
+        type: 3}
+      propertyPath: itemsToPool.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341874989879638899, guid: dd2d81605f1aaa64db018ff0f7a12363,
+        type: 3}
+      propertyPath: itemsToPool.Array.data[2].amountToPool
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341874989879638899, guid: dd2d81605f1aaa64db018ff0f7a12363,
+        type: 3}
+      propertyPath: itemsToPool.Array.data[2].objectToPool
+      value: 
+      objectReference: {fileID: 2697664755169684113, guid: 06a20747e0a544847b261e953856f02c,
+        type: 3}
+    - target: {fileID: 3341874989879638899, guid: dd2d81605f1aaa64db018ff0f7a12363,
+        type: 3}
+      propertyPath: itemsToPool.Array.data[2].isPoolExpanding
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd2d81605f1aaa64db018ff0f7a12363, type: 3}
 --- !u!1001 &4386563040413432137
@@ -6754,6 +6775,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919810518, guid: 66aba30bcf1b9864fbc8eb1dd69b7082, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66aba30bcf1b9864fbc8eb1dd69b7082, type: 3}
