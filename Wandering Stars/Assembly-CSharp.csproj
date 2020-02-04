@@ -71,6 +71,8 @@
     <Compile Include="Assets\Scripts\GameUIManager.cs" />
     <Compile Include="Assets\Scripts\HomingMissile.cs" />
     <Compile Include="Assets\Scripts\LoadingScreen.cs" />
+    <Compile Include="Assets\Scripts\MutliShot.cs" />
+    <Compile Include="Assets\Scripts\RegularBullet.cs" />
     <Compile Include="Assets\Scripts\SchipMovement.cs" />
     <Compile Include="Assets\Scripts\SmallAsteroids.cs" />
     <Compile Include="Assets\Scripts\SpaceShip.cs" />
@@ -133,6 +135,9 @@
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
       <HintPath>D:/Github/WanderingStars/Wandering Stars/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>D:/Github/WanderingStars/Wandering Stars/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="com.unity.cinemachine.editor">
       <HintPath>D:/Github/WanderingStars/Wandering Stars/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
@@ -153,9 +158,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/Github/WanderingStars/Wandering Stars/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>D:/Github/WanderingStars/Wandering Stars/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

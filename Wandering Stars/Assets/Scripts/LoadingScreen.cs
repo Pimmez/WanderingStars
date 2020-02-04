@@ -48,7 +48,9 @@ public class LoadingScreen : MonoBehaviour
 				loadingBarHolder.SetActive(false);
 			}
 
-			yield return null;
 		}
+
+		yield return new WaitForSeconds(2f);
+
 	}
 }

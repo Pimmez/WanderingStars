@@ -6,14 +6,11 @@ public class SpaceShip : MonoBehaviour
 {
 	[SerializeField] private int maxLives = 3;
 	private int lives = 0;
-	[SerializeField] private Transform muzzle = null;
-	[SerializeField] private float fireRate = 3f;
-	private float lastFired;
+	//[SerializeField] private Transform muzzle = null;
+	//[SerializeField] private float fireRate = 3f;
+	//private float lastFired;
 
 	private Animator anim;
-
-	private bool isRegularActive = true;
-	//private bool isMissileActive = false;
 
 	private void Awake()
 	{
@@ -33,10 +30,9 @@ public class SpaceShip : MonoBehaviour
 			Destroy(gameObject);
 		}
 
-		if(isRegularActive)
-		{
-			ShootRegularBullet();
-		}
+
+		//ShootRegularBullet();
+
 
 		/*
 		if(isMissileActive)
@@ -46,6 +42,7 @@ public class SpaceShip : MonoBehaviour
 		*/
     }
 
+	/*
 	private void ShootRegularBullet()
 	{
 		if (Input.GetKey(KeyCode.Space))
@@ -64,6 +61,7 @@ public class SpaceShip : MonoBehaviour
 			}
 		}
 	}
+	/*
 
 	private void RespawingShip()
 	{
