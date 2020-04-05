@@ -5,12 +5,13 @@ using System;
 
 public class AsteroidWaveSystem : MonoBehaviour
 {
-	public static Action<int> WavesEvent;
-	public static Action<float> WaveTimerEvent;
+	public static Action<int> WaveEvent;
 
-	[SerializeField] private float waitTimeForInitialization = 1f;
 	[SerializeField] private float waitTimeForNextWave = 10f;
 	[SerializeField] private int increaseEachWave = 3;
+
+
+	[SerializeField] private Transform[] spawnPoints;
 
 	private int waveCounter = 0;
 	private int asteroidSpawnAmount = 0;
@@ -19,25 +20,17 @@ public class AsteroidWaveSystem : MonoBehaviour
 	private void Start()
 	{
 		waveCounter = 1;
-		spawnWave = StartCoroutine(SpawnWaves());
-	}
 
-	private void Update()
-	{
-		if (WavesEvent != null)
+		if (WaveEvent != null)
 		{
-			WavesEvent(waveCounter);
+			WaveEvent(waveCounter);
 		}
-		if (WaveTimerEvent != null)
-		{
-			WaveTimerEvent(waitTimeForNextWave);
-		}
+
+		spawnWave = StartCoroutine(SpawnWaves());
 	}
 
 	private IEnumerator SpawnWaves()
 	{
-		yield return new WaitForSeconds(waitTimeForInitialization);
-
 		asteroidSpawnAmount = waveCounter * increaseEachWave;
 
 		while (true)
@@ -45,14 +38,27 @@ public class AsteroidWaveSystem : MonoBehaviour
 			for (int i = 0; i < asteroidSpawnAmount; i++)
 			{
 				GameObject _asteroid = ObjectPooler.SharedInstance.GetPooledObject("Asteroid");
+				int spawnPointIndex = UnityEngine.Random.Range(0, spawnPoints.Length);
+				Vector3 changeScale = new Vector3(UnityEngine.Random.Range(1, 3), UnityEngine.Random.Range(1, 3), 1);
+
 				if (_asteroid != null)
 				{
-					_asteroid.transform.position = new Vector3(UnityEngine.Random.Range(-5, 5), UnityEngine.Random.Range(-5, 5), 0);
+					_asteroid.transform.localScale = changeScale;
+					_asteroid.transform.position = spawnPoints[spawnPointIndex].position;
 					_asteroid.SetActive(true);
+					
 				}
 			}
+
 			yield return new WaitForSeconds(waitTimeForNextWave);
+
 			waveCounter++;
+
+			if(WaveEvent != null)
+			{
+				WaveEvent(waveCounter);
+			}
+
 		}
 	}
 }

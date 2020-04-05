@@ -62,26 +62,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\AnimatorPlayer.cs" />
     <Compile Include="Assets\Scripts\Asteroid.cs" />
-    <Compile Include="Assets\Scripts\Asteroids.cs" />
     <Compile Include="Assets\Scripts\AsteroidWaveSystem.cs" />
-    <Compile Include="Assets\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\AudioCue.cs" />
+    <Compile Include="Assets\Scripts\AudioCueEvent.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\EuclideanTorus.cs" />
-    <Compile Include="Assets\Scripts\GameUIManager.cs" />
-    <Compile Include="Assets\Scripts\HomingMissile.cs" />
-    <Compile Include="Assets\Scripts\LoadingScreen.cs" />
-    <Compile Include="Assets\Scripts\MutliShot.cs" />
-    <Compile Include="Assets\Scripts\RegularBullet.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\HUDManager.cs" />
+    <Compile Include="Assets\Scripts\MainMenuController.cs" />
+    <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\SchipMovement.cs" />
-    <Compile Include="Assets\Scripts\SmallAsteroids.cs" />
-    <Compile Include="Assets\Scripts\SpaceShip.cs" />
+    <Compile Include="Assets\Scripts\SmallAsteroid.cs" />
+    <Compile Include="Assets\Scripts\UIButtonSoundEffect.cs" />
     <Compile Include="Assets\Scripts\Utilities\ObjectPooler.cs" />
     <Compile Include="Assets\Scripts\Utilities\Tags.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />

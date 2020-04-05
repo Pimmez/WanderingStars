@@ -5,10 +5,19 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class SchipMovement : MonoBehaviour
 {
-	[SerializeField] private float rotationSpeed = 100.0f;
+	[SerializeField] private float rotationSpeed = 100f;
 	[SerializeField] private float thrustForce = 40f;
 	private Rigidbody2D rigid;
 
+	/// <summary>
+	/// PSEUDO CODE EngineSound
+	/// 
+	/// press w start accelerate sound while using input.getAxis
+	/// max speed = looping engine sound
+	/// release w = decrease engine sound
+	/// 0 speed = engine running
+	/// </summary>
+	
 	private void Awake()
 	{
 		rigid = GetComponent<Rigidbody2D>();

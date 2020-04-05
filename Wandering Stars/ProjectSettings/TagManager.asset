@@ -7,7 +7,7 @@ TagManager:
   - Asteroid
   - Explosion
   - RegularBullet
-  - HomingMissile
+  - Shield
   layers:
   - Default
   - TransparentFX
